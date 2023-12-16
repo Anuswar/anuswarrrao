@@ -1,10 +1,6 @@
 # Portfolio Website
 
-This is the code for my personal portfolio website showcasing my work as a web developer.
-
-## Credits
-
-This website was inspired by a YouTube video from Coder Coder. Check out the original video [here](https://youtu.be/65GVcdESj3s?si=CypD11wIw2S4PtMQ).
+This is the code for my personal portfolio website showcasing my work as a web developer. This website was inspired by a YouTube video from Coder Coder. Check out the original video [here](https://youtu.be/65GVcdESj3s?si=CypD11wIw2S4PtMQ).
 
 ## Description
 
