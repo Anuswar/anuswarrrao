@@ -1,6 +1,3 @@
- Here is a draft README.md for your portfolio website to share on GitHub so others can use and contribute to your code:
-
-```
 # Portfolio Website
 
 This is the code for my personal portfolio website showcasing my work as a web developer. 
@@ -46,6 +43,3 @@ If you spot any bugs or issues, please open an issue or submit a pull request wi
 ## License
 
 The code is available under the [MIT License](https://choosealicense.com/licenses/mit/).
-```
-
-This covers the key information needed for others to understand and potentially contribute back to your project code. Let me know if you would like any clarification or have additional questions!
