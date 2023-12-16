@@ -2,6 +2,10 @@
 
 This is the code for my personal portfolio website showcasing my work as a web developer.
 
+## Credits
+
+This website was inspired by a YouTube video from Coder Coder. Check out the original video [here](https://youtu.be/65GVcdESj3s?si=CypD11wIw2S4PtMQ).
+
 ## Description
 
 The website includes the following sections:
@@ -60,11 +64,6 @@ For content changes, update the following:
 ## Getting Started from Scratch
 
 If you want to start a similar project from scratch, you can use the [Portfolio Website Template](https://github.com/Anuswar/portfolio-website-template) repository. This template provides a basic structure for a portfolio website that you can customize according to your preferences.
-
-## Credits
-
-This website was inspired by a YouTube video from Coder Coder. Check out the original video [here](https://youtu.be/65GVcdESj3s?si=CypD11wIw2S4PtMQ).
-
 
 ## Contributing
 
