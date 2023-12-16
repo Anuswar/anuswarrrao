@@ -20,7 +20,7 @@ It uses HTML, SCSS and JavaScript without relying on frameworks or libraries. Ke
 
 ## Usage
 
-The site is currently deployed at [myportfolio.com](https://example.com). Feel free to look around and contact me!
+The site is currently deployed at [anuswarrrao.com](https://anuswarrrao.netlify.app). Feel free to look around and contact me!
 
 You can also clone or download the code to use it for your own portfolio website. Make sure to update the details, links, project thumbnails and resume to your own.
 
