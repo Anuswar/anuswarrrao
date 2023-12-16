@@ -26,7 +26,7 @@ You can also clone or download the code to use it for your own portfolio website
 
 ## Customization
 
-The color scheme and other theme values like font size and spacing can be customized by editing the SCSS variables in `assets/scss/_variables.scss`.
+The color scheme and other theme values like font size and spacing can be customized by editing the SCSS variables in `assets/css/style.css`.
 
 For content changes, update the following:
 
