@@ -11,7 +11,7 @@ The website includes the following sections:
 - **Projects** - Grid display of thumbnail images linking to external sites 
 - **Contact** - Contact form with fields for name, email and message
 
-It uses HTML, SCSS and JavaScript without relying on frameworks or libraries. Key functionality includes:
+It uses HTML, CSS and JavaScript without relying on frameworks or libraries. Key functionality includes:
 
 - Mobile responsive design
 - Custom cursor effects 
