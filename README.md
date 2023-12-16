@@ -26,15 +26,18 @@ You can also clone or download the code to use it for your own portfolio website
 
 ## Customization
 
-The color scheme and other theme values like font size and spacing can be customized by editing the SCSS variables in `assets/css/style.css`.
+The color scheme and other theme values like font size and spacing can be customized by editing the CSS variables in `assets/css/style.css`.
 
 For content changes, update the following:
 
-- Hero section content in `index.html`
-- Skills icons and details in `skills.html`
-- Project thumbnail images and links in `projects.html` 
-- Contact form action and details in `contact.html`
-- Resume file in `assets`
+- The main content in `index.html`
+- The main javascript in `assets/js/main.js`
+- Remixicon icons in `assets/icon/remixicon.css`
+- Google font in `assets/font/font.css`
+- profile, project thumbnail and pattern image in `assets/images/`
+- Scroll reveal animation in `assets/animation/scrollreveal.min.js`
+- Contact form action in `assets/email/email.min.js`
+- Resume file in `assets/pdf/Resume.pdf`
 
 ## Contributing
 
