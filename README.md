@@ -57,6 +57,10 @@ For content changes, update the following:
 - Contact form action in `assets/email/email.min.js`
 - Resume file in `assets/pdf/Resume.pdf`
 
+## Getting Started from Scratch
+
+If you want to start a similar project from scratch, you can use the [Portfolio Website Template](https://github.com/Anuswar/portfolio-website-template) repository. This template provides a basic structure for a portfolio website that you can customize according to your preferences.
+
 ## Contributing
 
 If you spot any bugs or issues, please open an [issue](https://github.com/Anuswar/anuswarrrao/issues) or submit a [pull request](https://github.com/Anuswar/anuswarrrao/pulls) with fixes. Before opening an issue or submitting a pull request, please make sure to check if the issue or fix has not been addressed already.
