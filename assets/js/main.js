@@ -274,10 +274,15 @@ document.querySelector(".scrollup").addEventListener("click", (event) => {
 
 /*=============== EMAIL JS ===============*/
 const contactForm = document.getElementById("contact-form"),
-  contactMessage = document.getElementById("contact-message");
+  contactMessage = document.getElementById("contact-message"),
+  sendButton = document.querySelector("#contact-form button");
 
 const sendEmail = (e) => {
   e.preventDefault();
+
+  // Disable the button and change its text
+  sendButton.disabled = true;
+  sendButton.textContent = "Sending...";
 
   //serviceID - templateID - #form - publicKey
   emailjs
@@ -289,20 +294,28 @@ const sendEmail = (e) => {
     )
     .then(
       () => {
-        //show send message
+        // Show success message
         contactMessage.textContent = "Message sent successfully ✅";
 
-        //remove message after five seconds
+        // Remove message after five seconds
         setTimeout(() => {
           contactMessage.textContent = "";
         }, 5000);
 
-        //clear input fields
+        // Clear input fields
         contactForm.reset();
+
+        // Revert the button back to its original state
+        sendButton.disabled = false;
+        sendButton.textContent = "Send Message";
       },
       () => {
-        //show error message
+        // Show error message
         contactMessage.textContent = "Message not sent (service error) ❌";
+
+        // Revert the button back to its original state
+        sendButton.disabled = false;
+        sendButton.textContent = "Send Message";
       }
     );
 };
