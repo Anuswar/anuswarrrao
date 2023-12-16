@@ -6,6 +6,119 @@ window.addEventListener("DOMContentLoaded", function () {
   document.body.classList.add("loaded");
 });
 
+/*=============== SCROLL REVEAL ANIMATION ===============*/
+const sr = ScrollReveal({
+  distance: "60px",
+  duration: 2500,
+  delay: 400,
+  // reset: true
+});
+
+sr.reveal(`.contact-headline, .projects-headline`, {
+  delay: 600,
+});
+sr.reveal(`.footer-title, .header-social, .skills-item, .projects-item`, {
+  origin: "top",
+  interval: 100,
+});
+sr.reveal(`.contact-description, .contact-form`, {
+  origin: "left",
+  interval: 100,
+});
+sr.reveal(`.hero-image`, { origin: "top" });
+sr.reveal(`.hero-text`);
+
+/*=============== CUSTOM CURSOR ===============*/
+isTouchDevice = () => {
+  return (
+    "ontouchstart" in window ||
+    navigator.maxTouchPoints > 0 ||
+    navigator.msMaxTouchPoints > 0
+  );
+};
+
+const cursors = document.querySelectorAll("[data-cursor]");
+const hoveredElements = [
+  ...document.querySelectorAll("button"),
+  ...document.querySelectorAll("a"),
+];
+
+// Check if it's a touch device
+if (isTouchDevice()) {
+  cursors.forEach((cursor) => {
+    cursor.style.display = "none";
+  });
+}
+
+// Follow cursor on mousemove
+document.addEventListener("mousemove", (event) => {
+  // Only update cursor position if it's not a touch device
+  if (!isTouchDevice()) {
+    const posX = event.clientX;
+    const posY = event.clientY;
+
+    // Cursor dot position
+    cursors[0].style.left = `${posX}px`;
+    cursors[0].style.top = `${posY}px`;
+
+    // Cursor outline position
+    setTimeout(() => {
+      cursors[1].style.left = `${posX}px`;
+      cursors[1].style.top = `${posY}px`;
+    }, 80);
+
+    // Reset cursor timeout on mousemove
+    resetCursorTimeout();
+  }
+});
+
+// Function to add or remove the "hovered" class
+function toggleHoverClass() {
+  for (let i = 0, len = cursors.length; i < len; i++) {
+    cursors[i].classList.toggle("hovered");
+  }
+}
+
+// Add event listeners using a generic function
+function addEventOnElements(elements, eventType, callback) {
+  elements.forEach(function (element) {
+    element.addEventListener(eventType, callback);
+  });
+}
+
+// Add hover class when mouseover on hoveredElements
+addEventOnElements(hoveredElements, "mouseover", toggleHoverClass);
+
+// Remove hover class when mouseout on hoveredElements
+addEventOnElements(hoveredElements, "mouseout", toggleHoverClass);
+
+// Hide cursor intentionally when mouseout of the window
+document.addEventListener("mouseout", () => {
+  cursors.forEach((cursor) => {
+    cursor.style.display = "none";
+  });
+});
+
+// Show cursor when mouseover the window
+document.addEventListener("mouseover", () => {
+  cursors.forEach((cursor) => {
+    cursor.style.display = "block";
+  });
+});
+
+// Cursor effects on mouse stopped
+let timeout;
+
+function resetCursorTimeout() {
+  clearTimeout(timeout);
+
+  timeout = setTimeout(() => {
+    cursors.forEach((cursor) => {
+      cursor.style.display = "none";
+    });
+  }, 1000);
+}
+
 /*=============== HEADER ===============*/
 const header = document.querySelector(".header");
 let previousScroll = 0;
@@ -159,97 +272,6 @@ document.querySelector(".scrollup").addEventListener("click", (event) => {
   });
 });
 
-/*=============== CUSTOM CURSOR ===============*/
-isTouchDevice = () => {
-  return (
-    "ontouchstart" in window ||
-    navigator.maxTouchPoints > 0 ||
-    navigator.msMaxTouchPoints > 0
-  );
-};
-
-const cursors = document.querySelectorAll("[data-cursor]");
-const hoveredElements = [
-  ...document.querySelectorAll("button"),
-  ...document.querySelectorAll("a"),
-];
-
-// Check if it's a touch device
-if (isTouchDevice()) {
-  cursors.forEach((cursor) => {
-    cursor.style.display = "none";
-  });
-}
-
-// Follow cursor on mousemove
-document.addEventListener("mousemove", (event) => {
-  // Only update cursor position if it's not a touch device
-  if (!isTouchDevice()) {
-    const posX = event.clientX;
-    const posY = event.clientY;
-
-    // Cursor dot position
-    cursors[0].style.left = `${posX}px`;
-    cursors[0].style.top = `${posY}px`;
-
-    // Cursor outline position
-    setTimeout(() => {
-      cursors[1].style.left = `${posX}px`;
-      cursors[1].style.top = `${posY}px`;
-    }, 80);
-
-    // Reset cursor timeout on mousemove
-    resetCursorTimeout();
-  }
-});
-
-// Function to add or remove the "hovered" class
-function toggleHoverClass() {
-  for (let i = 0, len = cursors.length; i < len; i++) {
-    cursors[i].classList.toggle("hovered");
-  }
-}
-
-// Add event listeners using a generic function
-function addEventOnElements(elements, eventType, callback) {
-  elements.forEach(function (element) {
-    element.addEventListener(eventType, callback);
-  });
-}
-
-// Add hover class when mouseover on hoveredElements
-addEventOnElements(hoveredElements, "mouseover", toggleHoverClass);
-
-// Remove hover class when mouseout on hoveredElements
-addEventOnElements(hoveredElements, "mouseout", toggleHoverClass);
-
-// Hide cursor intentionally when mouseout of the window
-document.addEventListener("mouseout", () => {
-  cursors.forEach((cursor) => {
-    cursor.style.display = "none";
-  });
-});
-
-// Show cursor when mouseover the window
-document.addEventListener("mouseover", () => {
-  cursors.forEach((cursor) => {
-    cursor.style.display = "block";
-  });
-});
-
-// Cursor effects on mouse stopped
-let timeout;
-
-function resetCursorTimeout() {
-  clearTimeout(timeout);
-
-  timeout = setTimeout(() => {
-    cursors.forEach((cursor) => {
-      cursor.style.display = "none";
-    });
-  }, 1000);
-}
-
 /*=============== EMAIL JS ===============*/
 const contactForm = document.getElementById("contact-form"),
   contactMessage = document.getElementById("contact-message");
@@ -286,25 +308,3 @@ const sendEmail = (e) => {
 };
 
 contactForm.addEventListener("submit", sendEmail);
-
-/*=============== SCROLL REVEAL ANIMATION ===============*/
-const sr = ScrollReveal({
-  distance: "60px",
-  duration: 2500,
-  delay: 400,
-  // reset: true
-});
-
-sr.reveal(`.contact-headline, .projects-headline`, {
-  delay: 600,
-});
-sr.reveal(`.footer-title, .header-social, .skills-item, .projects-item`, {
-  origin: "top",
-  interval: 100,
-});
-sr.reveal(`.contact-description, .contact-form`, {
-  origin: "left",
-  interval: 100,
-});
-sr.reveal(`.hero-image`, { origin: "top" });
-sr.reveal(`.hero-text`);
