@@ -83,4 +83,4 @@ If you'd like to contribute code to the project, you can submit a pull request. 
 
 ## License
 
-The code is available under the [MIT License](https://choosealicense.com/licenses/mit/).
+The code is available under the [MIT License](LICENSE.md).
