@@ -26,7 +26,7 @@ To use this code for your own portfolio website, you can download or clone the p
 
 ### Download
 
-1. Go to the [repository](https://github.com/yourusername/yourrepository).
+1. Go to the [repository](https://github.com/Anuswar/anuswarrrao).
 2. Click on the "Code" button.
 3. Select "Download ZIP".
 4. Extract the downloaded ZIP file to your desired location.
