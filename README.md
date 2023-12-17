@@ -20,7 +20,7 @@ It uses HTML, CSS and JavaScript without relying on frameworks or libraries. Key
 
 ## Usage
 
-The site is currently deployed at [anuswarrrao.com](https://anuswarrrao.netlify.app). Feel free to look around and contact me!
+The site is currently deployed at [anuswarrrao.netlify.app](https://anuswarrrao.netlify.app). Feel free to look around and contact me!
 
 To use this code for your own portfolio website, you can download or clone the project. Here's how:
 
