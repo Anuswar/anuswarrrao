@@ -1,7 +1,7 @@
 /*=============== PRELOADER ===============*/
 const preloader = document.querySelector("[data-preloader]");
 
-window.addEventListener("DOMContentLoaded", function () {
+window.addEventListener("DOMContentLoaded", () => {
   preloader.classList.add("loaded");
   document.body.classList.add("loaded");
 });
@@ -31,7 +31,7 @@ sr.reveal(`.hero-text`);
 
 /*=============== CUSTOM CURSOR ===============*/
 // Function to check if it's a touch device
-isTouchDevice = () => {
+const isTouchDevice = () => {
   return (
     "ontouchstart" in window ||
     navigator.maxTouchPoints > 0 ||
@@ -55,8 +55,7 @@ if (isTouchDevice()) {
 // Follow cursor on mousemove
 document.addEventListener("mousemove", (event) => {
   if (!isTouchDevice()) {
-    const posX = event.clientX;
-    const posY = event.clientY;
+    const { clientX: posX, clientY: posY } = event;
 
     cursors[0].style.left = `${posX}px`;
     cursors[0].style.top = `${posY}px`;
@@ -71,18 +70,18 @@ document.addEventListener("mousemove", (event) => {
 });
 
 // Function to toggle the "hovered" class
-function toggleHoverClass() {
-  for (let i = 0, len = cursors.length; i < len; i++) {
-    cursors[i].classList.toggle("hovered");
-  }
-}
+const toggleHoverClass = () => {
+  cursors.forEach(({ classList }) => {
+    classList.toggle("hovered");
+  });
+};
 
 // Add event listeners using a generic function
-function addEventOnElements(elements, eventType, callback) {
-  elements.forEach(function (element) {
+const addEventOnElements = (elements, eventType, callback) => {
+  elements.forEach((element) => {
     element.addEventListener(eventType, callback);
   });
-}
+};
 
 // Add hover class on mouseover
 addEventOnElements(hoveredElements, "mouseover", toggleHoverClass);
@@ -92,45 +91,30 @@ addEventOnElements(hoveredElements, "mouseout", toggleHoverClass);
 
 // Hide cursor on mouseout of the window
 document.addEventListener("mouseout", () => {
-  cursors.forEach((cursor) => {
-    cursor.style.display = "none";
+  cursors.forEach(({ style }) => {
+    style.display = "none";
   });
 });
 
 // Show cursor on mouseover the window
 document.addEventListener("mouseover", () => {
-  cursors.forEach((cursor) => {
-    cursor.style.display = "block";
+  cursors.forEach(({ style }) => {
+    style.display = "block";
   });
 });
 
 // Cursor effects on mouse stopped
 let timeout;
 
-function resetCursorTimeout() {
+const resetCursorTimeout = () => {
   clearTimeout(timeout);
 
   timeout = setTimeout(() => {
-    cursors.forEach((cursor) => {
-      cursor.style.display = "none";
+    cursors.forEach(({ style }) => {
+      style.display = "none";
     });
   }, 1000);
-}
-
-/*=============== HEADER ===============*/
-const header = document.querySelector(".header");
-let previousScroll = 0;
-
-window.addEventListener("scroll", () => {
-  const currentScroll = window.pageYOffset;
-  if (currentScroll > previousScroll) {
-    header.classList.add("hide");
-  } else {
-    header.classList.remove("hide");
-    header.style.background = currentScroll === 0 ? "transparent" : "black";
-  }
-  previousScroll = currentScroll;
-});
+};
 
 /*=============== SHOW MENU ===============*/
 const navMenu = document.getElementById("nav-menu"),
@@ -159,35 +143,19 @@ if (navClose) {
 // Close menu when overlay is clicked
 overlay.addEventListener("click", closeMenu);
 
-/*=============== REMOVE MENU MOBILE ===============*/
-const navLink = document.querySelectorAll(".nav-link");
-
-const linkAction = (event) => {
-  event.preventDefault();
-  const targetId = event.currentTarget.getAttribute("href").substring(1);
-  closeMenu();
-  history.replaceState(
-    null,
-    null,
-    window.location.pathname + window.location.search
-  );
-  document.getElementById(targetId).scrollIntoView({
-    behavior: "smooth",
-  });
-};
-
-navLink.forEach((n) => n.addEventListener("click", linkAction));
+/*=============== HIDE HEADER ===============*/
+const header = document.querySelector(".header");
+let previousScroll = 0;
 
 window.addEventListener("scroll", () => {
-  if (navMenu.classList.contains("show-menu")) {
-    closeMenu();
+  const currentScroll = window.pageYOffset;
+  if (currentScroll > previousScroll) {
+    header.classList.add("hide");
+  } else {
+    header.classList.remove("hide");
+    header.style.background = currentScroll === 0 ? "transparent" : "black";
   }
-});
-
-document.addEventListener("keydown", (event) => {
-  if (event.key === "Escape" && navMenu.classList.contains("show-menu")) {
-    closeMenu();
-  }
+  previousScroll = currentScroll;
 });
 
 /*=============== SCROLL SECTIONS ACTIVE LINK ===============*/
@@ -201,7 +169,7 @@ const scrollActive = () => {
       sectionTop = current.offsetTop - 58,
       sectionId = current.getAttribute("id"),
       sectionsClasses = document.querySelectorAll(
-        ".nav-menu a[href*=" + sectionId + "]"
+        `.nav-menu a[href*=${sectionId}]`
       );
 
     sectionsClasses.forEach((link) => {
@@ -217,6 +185,25 @@ const scrollActive = () => {
 scrollActive();
 
 window.addEventListener("scroll", scrollActive);
+
+/*=============== REMOVE MENU MOBILE ===============*/
+const navLink = document.querySelectorAll(".nav-link");
+
+const linkAction = (event) => {
+  event.preventDefault();
+  const targetId = event.currentTarget.getAttribute("href").substring(1);
+  closeMenu();
+  history.replaceState(
+    null,
+    null,
+    `${window.location.pathname}${window.location.search}`
+  );
+  document.getElementById(targetId).scrollIntoView({
+    behavior: "smooth",
+  });
+};
+
+navLink.forEach((n) => n.addEventListener("click", linkAction));
 
 /*=============== SHOW SCROLL UP ===============*/
 const scrollUp = () => {
@@ -254,39 +241,32 @@ const contactForm = document.getElementById("contact-form"),
   contactMessage = document.getElementById("contact-message"),
   sendButton = document.querySelector("#contact-form button");
 
-const sendEmail = (e) => {
+const sendEmail = async (e) => {
   e.preventDefault();
 
   sendButton.disabled = true;
   sendButton.textContent = "Sending...";
 
-  emailjs
-    .sendForm(
+  try {
+    await emailjs.sendForm(
       "service_jodmm14",
       "template_4h6p1xi",
       "#contact-form",
       "0WpGLt88RHCIQLHBN"
-    )
-    .then(
-      () => {
-        contactMessage.textContent = "Message sent successfully ✅";
-
-        setTimeout(() => {
-          contactMessage.textContent = "";
-        }, 5000);
-
-        contactForm.reset();
-
-        sendButton.disabled = false;
-        sendButton.textContent = "Send Message";
-      },
-      () => {
-        contactMessage.textContent = "Message not sent (service error) ❌";
-
-        sendButton.disabled = false;
-        sendButton.textContent = "Send Message";
-      }
     );
+
+    contactMessage.textContent = "Message sent successfully ✅";
+    setTimeout(() => {
+      contactMessage.textContent = "";
+    }, 5000);
+
+    contactForm.reset();
+  } catch (error) {
+    contactMessage.textContent = "Message not sent (service error) ❌";
+  } finally {
+    sendButton.disabled = false;
+    sendButton.textContent = "Send Message";
+  }
 };
 
 contactForm.addEventListener("submit", sendEmail);
