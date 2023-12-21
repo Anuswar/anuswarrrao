@@ -913,7 +913,7 @@ html:hover {
   column-gap:1rem;
 }
 
-.nav-icons ri {
+.nav-icons .header-social {
   font-size:20px;
   height:44px;
   width:44px;
