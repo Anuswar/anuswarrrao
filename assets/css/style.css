@@ -351,7 +351,7 @@ h1 > span {
   .hero-image {
     position: relative;
     width: 42vw;
-    max-width: 445px;
+    max-width: 500px;
     /* width: 322px; */
     height: auto;
     left: auto;
