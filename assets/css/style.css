@@ -1,8 +1,6 @@
-/* =============== GLOBAL =============== */
 @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap");
 
 :root {
-  /*========== Colors ==========*/
   --bg-body: hsl(0, 0%, 8%);
   --bg-body2: hsl(0, 0%, 14%);
   --accent: hsl(153, 71%, 59%);
@@ -11,7 +9,6 @@
   --invalid: hsl(7, 100%, 68%);
 }
 
-/* =============== BASE =============== */
 html,
 body {
   overflow-x: hidden;
@@ -33,9 +30,7 @@ body {
   margin: 0;
   background-color: var(--bg-body);
   color: var(--text1);
-  font-size: 1.125rem;
-  line-height: 1.56;
-  font-family: "Space Grotesk", sans-serif;
+  font: 1.125rem/1.56 "Space Grotesk", sans-serif;
 }
 
 .bg-less-dark {
@@ -56,18 +51,12 @@ h3 {
 }
 
 p {
-  font-size: clamp(1rem, 0.79rem + 0.89vw, 1.125rem);
-  line-height: 1.5;
-  color: var(--text2);
+  font: clamp(1rem, 0.79rem + 0.89vw, 1.125rem) / 1.5 var(--text2);
 }
 
 a {
   transition: color 250ms ease-in-out;
   text-decoration: none;
-}
-
-ul {
-  list-style: none;
 }
 
 img {
@@ -88,39 +77,28 @@ textarea:invalid {
   outline-color: var(--invalid);
 }
 
-/* =============== LINKS AND BUTTONS =============== */
+/* Links and Buttons */
 a.underline,
 button {
   display: inline-block;
   padding-bottom: 0.625rem;
-  font-size: 1rem;
-  line-height: 1.625;
-  letter-spacing: 0.143em;
-  font-weight: 700;
-  text-transform: uppercase;
-  color: var(--text1);
+  font: 1rem/1.625 0.143em 700 uppercase var(--text1);
   text-decoration: none;
-  background-image: linear-gradient(
-    to right,
-    var(--accent) 75%,
-    var(--accent) 75%
-  );
-  background-position: 0 2.1em;
-  background-repeat: repeat-x;
-  background-size: 8px 2px;
+  background: linear-gradient(to right, var(--accent) 75%, var(--accent) 75%) 0
+    2.1em / repeat-x 8px 2px;
 }
 
 a:hover {
   color: var(--accent);
 }
 
-/* =============== IMAGES AND VISUAL =============== */
+/* Images and Visual */
 img,
 svg {
   display: block;
 }
 
-/* =============== LAYOUT =============== */
+/* Layout */
 .wrapper {
   width: calc(100% - 2rem);
   max-width: 69.375rem;
@@ -128,9 +106,7 @@ svg {
 }
 
 .header-xl {
-  font-size: clamp(2.5rem, 0.7rem + 7.68vw, 5.5rem);
-  letter-spacing: -0.028em;
-  line-height: 1.1;
+  font: clamp(2.5rem, 0.7rem + 7.68vw, 5.5rem) / 1.1 -0.028em;
 }
 
 .visually-hidden {
@@ -146,7 +122,7 @@ svg {
   border-bottom: 1px solid var(--text2);
 }
 
-/* =========== BREAKPOINTS =========== */
+/* Breakpoints */
 @media (min-width: 37.5em) {
   .wrapper {
     width: calc(100% - 3.75rem);
