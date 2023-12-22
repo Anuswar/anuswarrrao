@@ -133,6 +133,15 @@ svg {
   line-height: 1.1;
 }
 
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 .bottom-border {
   border-bottom: 1px solid var(--text2);
 }
@@ -227,7 +236,7 @@ html:hover {
   position: relative;
   top: 0;
   z-index: 50;
-  margin-block-start: 20px;
+  margin-block-start: 10px;
 }
 
 .nav {
@@ -259,6 +268,7 @@ html:hover {
 /*======= BREAKPOINTS =======*/
 @media (min-width: 62.5em) {
   .header {
+    margin-block-start: 20px;
     margin-block-end: 127px;
   }
   .header-social {
