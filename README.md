@@ -54,6 +54,6 @@ Contributions are welcome! If you find any issues, have suggestions, or want to 
 
 ## License
 
-This project is licensed under the [MIT License](LICENSE), which means you are free to use, modify, and distribute the code.
+This project is licensed under the [MIT License](LICENSE.md), which means you are free to use, modify, and distribute the code.
 
 Thank you for your interest in contributing! 🚀
