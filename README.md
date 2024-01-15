@@ -8,8 +8,8 @@ To run this website locally or make contributions, follow these steps:
 
 1. **Clone the repository:**
     ```bash
-    git clone https://github.com/Anuswar/your-repository.git
-    cd your-repository
+    git clone https://github.com/Anuswar/anuswarrrao.git
+    cd anuswarrrao
     ```
 
 2. **Open the `index.html` file** in your preferred web browser or set up a local development server.
