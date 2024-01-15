@@ -193,3 +193,25 @@ footer {
   padding-top: 50px;
   padding-bottom: 10px;
 }
+
+/* General styles for projects */
+.project {
+  border: 1px solid #7b8383;
+  border-radius: 5px;
+  padding: 16px;
+  margin-bottom: 12px;  /* Add spacing between projects */
+}
+
+/* Responsive layout for smaller screens */
+.project-container {
+  display: flex;
+  flex-wrap: wrap;  /* Wrap projects to next row if needed */
+  justify-content: center;  /* Center projects horizontally */
+}
+
+@media screen and (min-width: 1025px) {
+  .project {
+    width: 50%;  /* Display 2 projects per row on larger screens */
+  }
+}
+
