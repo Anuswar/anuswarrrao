@@ -3,21 +3,34 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Passionate Full-stack Developer based in India, committed to crafting outstanding web applications with a focus on accessibility and user satisfaction. Explore my portfolio for innovative solutions and collaborative projects.">
+    <meta name="keywords" content="anuswar, Anuswar R Rao, Full-stack Developer, web app, computer science, engineering, freelancer, Anuswar, Anu">
+    <meta property="og:title" content="Anuswar R Rao">
+
+    <!-- Favicon -->
     <link rel="icon" type="image/png" sizes="32x32" href="assets/images/Watashi.jpeg">
     <title>Anuswar R Rao</title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css">
     <link rel="stylesheet" href="assets/css/style.css">
+
+     <!-- External Scripts -->
+     <script defer crossorigin="anonymous" src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+     <script defer src="assets/js/script.js"></script>
   </head>
   <body>
+
+    <!--==================== CURSOR ====================-->
+    <div class="cursor-dot" data-cursor></div>
+    <div class="cursor-outline" data-cursor></div>
     
     <!--==================== HEADER ====================-->
     <header>
       <div class="header-content">
         <h3>Anuswar R Rao</h3>
         <nav>
-          <a href="#projects">Projects</a>
+          <a href="#projects" id="projects-link">Projects</a>
           <a href="mailto:anuswarrrao@gmail.com">
             <i class="ri-chat-4-fill"></i>
           </a>
@@ -28,34 +41,44 @@
     <!--==================== HOME ====================-->
     <section id="home">
       <div class="main-content">
-        <div class="profile-info">
-          <img src="assets/images/Watashi.jpeg" alt="Profile Image" width="80" height="80">
-          <div class="text-info">
-            <h1>Anuswar R Rao</h1>
-            
-            <div class="social-links">
+
+        <div class="img-info-container">
+          <div class="img-container">
+            <img width="80" height="80" src="assets/images/Watashi.jpeg" />
+          </div>
+
+          <div class="info-container">
+            <div class="social-container">
               <a href="https://github.com/Anuswar" target="_blank"><i class="ri-github-fill"></i></a>
               <a href="https://www.linkedin.com/in/anuswarrrao" target="_blank"><i class="ri-linkedin-box-fill"></i></a>
               <a href="https://www.instagram.com/anuswarrrao" target="_blank"><i class="ri-instagram-line"></i></a>
             </div>
+
+            <h1>Anuswar R Rao</h1>
+
+            <hr />
           </div>
         </div>
 
         <div class="user-bio">
           Based in India, I'm a Full-stack developer passionate about building accessible web apps that users love.
-          <a href="assets/pdf/Resume.pdf" download>Download my Cv</a>
+          <a href="assets/pdf/Resume.pdf" download>My Resume 
+            <i class="ri-external-link-fill"></i>
+          </a>
         </div>
     
         <div class="quote-box">
-          <p><i>"You cannot use the word possibility without limitations." <br> – Master Higuchi</i></p>
+          <p>
+            <i>"You cannot use the word possibility without limitations." <br> – Master Higuchi</i>
+          </p>
         </div>
       </div>
     </section>
-    
+
     <!--==================== PROJECTS ====================-->
     <section id="projects">
       <div class="main-content">
-        <h1>PROJECTS</h1>
+        <h1 class="tilte">PROJECTS</h1>
         <div class="project-grid">
           
           <article class="project">
@@ -63,7 +86,9 @@
               <h3>anicard</h3>
               <i class="ri-external-link-fill"></i>
             </a>
+
             <p>Create simple cards with anime information and cover on it.</p>
+
             <div class="project-languages">
               <span>JavaScript</span>
               <span>CSS</span>
@@ -76,7 +101,9 @@
               <h3>anicard</h3>
               <i class="ri-external-link-fill"></i>
             </a>
+
             <p>Create simple cards with anime information and cover on it.</p>
+
             <div class="project-languages">
               <span>JavaScript</span>
               <span>CSS</span>
@@ -89,7 +116,9 @@
               <h3>anicard</h3>
               <i class="ri-external-link-fill"></i>
             </a>
+
             <p>Create simple cards with anime information and cover on it.</p>
+
             <div class="project-languages">
               <span>JavaScript</span>
               <span>CSS</span>
@@ -97,6 +126,7 @@
             </div>
           </article>
           </div>
+
         <div class="more-projects">
           more at 
           <a href="https://github.com/Anuswar" target="_blank">GITHUB
@@ -108,7 +138,16 @@
     
     <!--==================== FOOTER ====================-->
     <footer>
-      <p>© 2024 Built by <a href="https://github.com/Anuswar" target="_blank">Anuswar R Rao</a></p>
+      <div class="main-content footer">
+        <p>© 2024 Built by 
+          <a href="https://github.com/Anuswar" target="_blank">Anuswar R Rao</a>
+        </p>        
+      </div> 
     </footer>
+
+    <!--==================== SCROLL UP ====================-->
+    <a href="#" class="scrollup" id="scroll-up">
+      <i class="ri-arrow-up-s-line"></i>
+    </a>
   </body>
 </html>
