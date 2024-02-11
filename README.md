@@ -2,7 +2,7 @@
 
 Welcome to the GitHub repository for a Simple portfolio website! This repository contains the source code for the website showcasing Anuswar's projects and information. Feel free to explore, learn, and contribute.
 
-## 🚀 Getting Started
+## ⚙️ Installation
 
 To run this website locally or make contributions, follow these steps:
 
@@ -21,7 +21,7 @@ To run this website locally or make contributions, follow these steps:
     ```
 3. **Open your browser** and navigate to `http://localhost:8000` (or the port specified by your server).
 
-## Technologies Used
+## 🛠️ Technologies Used
 
 - HTML
 - CSS
