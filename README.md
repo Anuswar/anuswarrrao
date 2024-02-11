@@ -21,6 +21,13 @@ To run this website locally or make contributions, follow these steps:
     ```
 3. **Open your browser** and navigate to `http://localhost:8000` (or the port specified by your server).
 
+## Technologies Used
+
+- HTML
+- CSS
+- JavaScript
+- Local Storage for data persistence
+
 ## 📂 Project Structure
 
 The project structure is organized as follows:
