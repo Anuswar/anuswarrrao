@@ -1,153 +1,284 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Passionate Full-stack Developer based in India, committed to crafting outstanding web applications with a focus on accessibility and user satisfaction. Explore my portfolio for innovative solutions and collaborative projects.">
     <meta name="keywords" content="anuswar, Anuswar R Rao, Full-stack Developer, web app, computer science, engineering, freelancer, Anuswar, Anu">
     <meta property="og:title" content="Anuswar R Rao">
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/Watashi.jpeg">
     <title>Anuswar R Rao</title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@4.0.0/fonts/remixicon.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/style.css" type="text/css">
 
-     <!-- External Scripts -->
-     <script defer crossorigin="anonymous" src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
-     <script defer src="assets/js/script.js"></script>
-  </head>
-  <body>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/images/favicon.png">
+
+    <!-- External Scripts -->
+    <script defer crossorigin="anonymous" src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+    <script async crossorigin="anonymous" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script defer src="assets/js/script.js"></script>
+</head>
+<body>
+    <!--==================== PRELOADER ====================-->
+    <div class="preloader" data-preloader>
+      <span class="line"></span>
+    </div>
 
     <!--==================== CURSOR ====================-->
     <div class="cursor-dot" data-cursor></div>
     <div class="cursor-outline" data-cursor></div>
-    
+     
+
     <!--==================== HEADER ====================-->
-    <header>
-      <div class="header-content">
-        <h3>Anuswar R Rao</h3>
-        <nav>
-          <a href="#projects" id="projects-link">Projects</a>
-          <a href="mailto:anuswarrrao@gmail.com">
-            <i class="ri-chat-4-fill"></i>
-          </a>
+    <header class="header">
+      <div class="wrapper">
+        <nav class="nav">
+          <a class="logo">Anuswar R Rao</a>
+
+          <div class="nav-icons">
+            <a href="https://www.linkedin.com/in/anuswarrrao" target="_blank" class="header-social">
+              <i class="ri-linkedin-box-fill"></i>
+            </a>
+            <a href="https://www.instagram.com/anuswarrrao" target="_blank" class="header-social">
+              <i class="ri-instagram-line"></i>
+            </a>
+            <a href="https://github.com/Anuswar" target="_blank" class="header-social">
+              <i class="ri-github-fill"></i>
+            </a>
+          </div>
         </nav>
       </div>
     </header>
-    
-    <!--==================== HOME ====================-->
-    <section id="home">
-      <div class="main-content">
 
-        <div class="img-info-container">
-          <div class="img-container">
-            <img width="80" height="80" src="assets/images/Watashi.jpeg" />
+    <!--==================== MAIN ====================-->
+    <main>
+      <!--==================== HOME ====================-->
+      <section class="hero">
+        <div class="wrapper hero-wrapper bottom-border">
+          <div class="hero-content">
+            <picture>
+              <img class="hero-image" src="assets/images/image-profile.jpg" alt="loading..." width="174" height="383" loading="eager" />
+            </picture>
+            <img class="hero-rings" src="assets/images/pattern-rings.svg" alt="loading..." width="530" height="129" loading="eager" />
+            <img class="hero-circle" src="assets/images/pattern-circle.svg" alt="loading..." width="129" height="129" loading="eager" />
+            <div class="hero-text">
+              <h1 class="hero-headline header-xl">
+                Nice to<br />
+                meet you! I'm <span>Anuswar</span>.
+              </h1>
+              <p class="hero-description">
+                Based in India, I'm a Full-stack developer passionate about
+                building accessible web apps that users love.
+              </p>
+              <a href="assets/pdf/Resume.pdf" download class="hero-contact underline">Download Cv</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!--==================== SKILLS ====================-->
+      <section class="skills">
+        <div class="wrapper skills-wrapper bottom-border">
+          <div class="skills-item">
+            <h3 class="skills-title">HTML</h3>
+            <p class="skills-description">4 Years Experience</p>
           </div>
 
-          <div class="info-container">
-            <div class="social-container">
-              <a href="https://github.com/Anuswar" target="_blank"><i class="ri-github-fill"></i></a>
-              <a href="https://www.linkedin.com/in/anuswarrrao" target="_blank"><i class="ri-linkedin-box-fill"></i></a>
-              <a href="https://www.instagram.com/anuswarrrao" target="_blank"><i class="ri-instagram-line"></i></a>
-            </div>
+          <div class="skills-item">
+            <h3 class="skills-title">CSS</h3>
+            <p class="skills-description">4 Years Experience</p>
+          </div>
 
-            <h1>Anuswar R Rao</h1>
+          <div class="skills-item">
+            <h3 class="skills-title">JavaScript</h3>
+            <p class="skills-description">4 Years Experience</p>
+          </div>
 
-            <hr />
+          <div class="skills-item">
+            <h3 class="skills-title">Accessibility</h3>
+            <p class="skills-description">4 Years Experience</p>
+          </div>
+
+          <div class="skills-item">
+            <h3 class="skills-title">React</h3>
+            <p class="skills-description">3 Years Experience</p>
+          </div>
+
+          <div class="skills-item">
+            <h3 class="skills-title">Sass</h3>
+            <p class="skills-description">3 Years Experience</p>
           </div>
         </div>
 
-        <div class="user-bio">
-          Based in India, I'm a Full-stack developer passionate about building accessible web apps that users love.
-          <a href="assets/pdf/Resume.pdf" download>My Resume 
-            <i class="ri-external-link-fill"></i>
-          </a>
+        <img class="skills-rings" src="assets/images/pattern-rings.svg" alt="loading..." width="530" height="129" loading="eager" />
+      </section>
+
+      <!--==================== PROJECTS ====================-->
+      <section class="projects">
+        <div class="wrapper projects-wrapper">
+          <div class="projects-grid">
+            <h2 class="projects-headline header-xl">Projects</h2>
+
+            <div class="projects-item">
+              <picture class="projects-picture">
+                <img src="assets/images/thumbnail-project-1.jpg" alt="loading..." loading="lazy" />
+              </picture>
+              <h3 class="projects-name">Design Portfolio</h3>
+              <p class="projects-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+              </p>
+              <div class="projects-links">
+                <a href="" class="underline">View Project</a>
+                <a href="" class="underline">View Code</a>
+              </div>
+            </div>
+
+            <div class="projects-item">
+              <picture class="projects-picture">
+                <img src="assets/images/thumbnail-project-2.jpg" alt="loading..." loading="lazy" />
+              </picture>
+              <h3 class="projects-name">E-Learning Landing Page</h3>
+              <p class="projects-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+              </p>
+              <div class="projects-links">
+                <a href="" class="underline">View Project</a>
+                <a href="" class="underline">View Code</a>
+              </div>
+            </div>
+
+            <div class="projects-item">
+              <picture class="projects-picture">
+                <img src="assets/images/thumbnail-project-3.jpg" alt="loading..." loading="lazy" />
+              </picture>
+              <h3 class="projects-name">Todo Web App</h3>
+              <p class="projects-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </p>
+              <div class="projects-links">
+                <a href="" class="underline">View Project</a>
+                <a href="" class="underline">View Code</a>
+              </div>
+            </div>
+
+            <div class="projects-item">
+              <picture class="projects-picture">
+                <img src="assets/images/thumbnail-project-4.jpg" alt="loading..." loading="lazy" />
+              </picture>
+              <h3 class="projects-name">Entertainment Web App</h3>
+              <p class="projects-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </p>
+              <div class="projects-links">
+                <a href="" class="underline">View Project</a>
+                <a href="" class="underline">View Code</a>
+              </div>
+            </div>
+
+            <div class="projects-item">
+              <picture class="projects-picture">
+                <img
+                  src="/assets/images/thumbnail-project-5.jpg" alt="loading..." loading="lazy" />
+              </picture>
+              <h3 class="projects-name">Memory Game</h3>
+              <p class="projects-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </p>
+              <div class="projects-links">
+                <a href="" class="underline">View Project</a>
+                <a href="" class="underline">View Code</a>
+              </div>
+            </div>
+
+            <div class="projects-item">
+              <picture class="projects-picture">
+                <img src="assets/images/thumbnail-project-6.jpg" alt="loading..." loading="lazy" />
+              </picture>
+              <h3 class="projects-name">Art Gallery Showcase</h3>
+              <p class="projects-tags">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>JavaScript</span>
+              </p>
+              <div class="projects-links">
+                <a href="" class="underline">View Project</a>
+                <a href="" class="underline">View Code</a>
+              </div>
+            </div>
+          </div>
         </div>
-    
-        <div class="quote-box">
-          <p>
-            <i>"You cannot use the word possibility without limitations." <br> – Master Higuchi</i>
-          </p>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!--==================== PROJECTS ====================-->
-    <section id="projects">
-      <div class="main-content">
-        <h1 class="tilte">PROJECTS</h1>
-        <div class="project-grid">
-          
-          <article class="project">
-            <a href="https://github.com/Anuswar" target="_blank" class="project-link">
-              <h3>anicard</h3>
-              <i class="ri-external-link-fill"></i>
-            </a>
-
-            <p>Create simple cards with anime information and cover on it.</p>
-
-            <div class="project-languages">
-              <span>JavaScript</span>
-              <span>CSS</span>
-              <span>HTML</span>
-            </div>
-          </article>
-
-          <article class="project">
-            <a href="https://github.com/Anuswar" target="_blank" class="project-link">
-              <h3>anicard</h3>
-              <i class="ri-external-link-fill"></i>
-            </a>
-
-            <p>Create simple cards with anime information and cover on it.</p>
-
-            <div class="project-languages">
-              <span>JavaScript</span>
-              <span>CSS</span>
-              <span>HTML</span>
-            </div>
-          </article>
-
-          <article class="project">
-            <a href="https://github.com/Anuswar" target="_blank" class="project-link">
-              <h3>anicard</h3>
-              <i class="ri-external-link-fill"></i>
-            </a>
-
-            <p>Create simple cards with anime information and cover on it.</p>
-
-            <div class="project-languages">
-              <span>JavaScript</span>
-              <span>CSS</span>
-              <span>HTML</span>
-            </div>
-          </article>
+      <!--==================== CONTACT ====================-->
+      <section class="contact bg-less-dark">
+        <div class="wrapper contact-wrapper bottom-border">
+          <div class="contact-text">
+            <h2 class="contact-headline header-xl">Contact</h2>
+            <p class="contact-description">
+              I would love to hear about your project and how I could help.
+              Please fill in the form, and I'll get back to you as soon as
+              possible.
+            </p>
           </div>
 
-        <div class="more-projects">
-          more at 
-          <a href="https://github.com/Anuswar" target="_blank">GITHUB
-            <i class="ri-external-link-fill"></i>
-          </a>
+          <form action="" class="contact-form" id="contact-form" autocomplete="on">
+            <div class="contact-control">
+              <input type="text" id="name" name="name" placeholder="Name" autocomplete="name" required />
+              <img src="assets/images/icon-invalid.svg" alt="" class="contact-invalid-icon" width="24" height="24" loading="eager" />
+            </div>
+            <div class="contact-control">
+              <input type="email" id="email" name="email" placeholder="Email" autocomplete="email" required />
+              <img src="assets/images/icon-invalid.svg" alt="" class="contact-invalid-icon" width="24" height="24" loading="eager" />
+            </div>
+            <div class="contact-control">
+              <textarea name="message" id="message" cols="30" rows="3" placeholder="Message" required></textarea>
+              <img src="assets/images/icon-invalid.svg" alt="" class="contact-invalid-icon" width="24" height="24" loading="eager" />
+            </div>
+
+            <p class="contact-message" id="contact-message"></p>
+
+            <div class="contact-control align-right">
+              <button type="submit">Send Message</button>
+            </div>
+          </form>
         </div>
-      </div>
-    </section>
-    
+        <img class="contact-rings" src="assets/images/pattern-rings.svg" alt="" width="530" height="129" loading="eager" />
+      </section>
+    </main>
+
     <!--==================== FOOTER ====================-->
-    <footer>
-      <div class="main-content footer">
-        <p>© 2024 Built by 
-          <a href="https://github.com/Anuswar" target="_blank">Anuswar R Rao</a>
-        </p>        
-      </div> 
+    <footer class="footer bg-less-dark">
+      <div class="wrapper">
+        <nav class="footer-nav">
+          <a class="footer-home">Anuswar R Rao</a>
+
+          <a href="https://www.linkedin.com/in/anuswarrrao" target="_blank" class="footer-social">
+            <i class="ri-linkedin-box-fill"></i>
+          </a>
+          <a href="https://www.instagram.com/anuswarrrao" target="_blank" class="footer-social">
+            <i class="ri-instagram-line"></i>
+          </a>
+          <a href="https://github.com/Anuswar" target="_blank" class="footer-social">
+            <i class="ri-github-fill"></i>
+          </a>
+        </nav>
+      </div>
     </footer>
 
     <!--==================== SCROLL UP ====================-->
     <a href="#" class="scrollup" id="scroll-up">
       <i class="ri-arrow-up-s-line"></i>
     </a>
+
   </body>
 </html>
