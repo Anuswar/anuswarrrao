@@ -1,10 +1,49 @@
 /*=============== PRELOADER ===============*/
-const preloader = document.querySelector("[data-preloader]");
+const preloader = document.querySelector(".preloader");
 
 window.addEventListener("DOMContentLoaded", () => {
-  preloader.classList.add("loaded");
-  document.body.classList.add("loaded");
+  if (!document.body.classList.contains("loaded")) {
+    document.body.classList.add("loaded");
+    preloader.classList.add("loaded"); // Add loaded class to preloader
+  }
 });
+
+window.onload = () => {
+  // Scroll to the top when all external resources are loaded
+  window.scrollTo(0, 0);
+};
+
+/*=============== SHOW SCROLL UP ===============*/
+const scrollUp = () => {
+  const scrollUpButton = document.getElementById("scroll-up");
+
+  if (window.scrollY >= 350) {
+    scrollUpButton.classList.add("show-scroll");
+  } else {
+    scrollUpButton.classList.remove("show-scroll");
+  }
+};
+
+// Scroll to the top when the button is clicked
+const scrollToTop = () => {
+  window.scrollTo({
+    top: 0,
+    behavior: "smooth",
+  });
+};
+
+window.addEventListener("scroll", scrollUp);
+
+// Prevent the default behavior of the anchor tag
+document.getElementById("scroll-up").addEventListener("click", (event) => {
+  event.preventDefault();
+  scrollToTop();
+});
+
+// Disable scroll restoration
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
 
 /*=============== SCROLL REVEAL ANIMATION ===============*/
 const sr = ScrollReveal({
@@ -119,30 +158,6 @@ function resetCursorTimeout() {
     });
   }, 1000);
 }
-
-/*=============== SHOW SCROLL UP ===============*/
-const scrollUp = () => {
-  const scrollUp = document.getElementById("scroll-up");
-
-  if (this.scrollY >= 350) {
-    scrollUp.classList.add("show-scroll");
-  } else {
-    scrollUp.classList.remove("show-scroll");
-  }
-
-  // Prevent the default behavior of the anchor tag
-  scrollUp.addEventListener("click", (event) => {
-    event.preventDefault();
-
-    // Scroll to the top smoothly
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  });
-};
-
-window.addEventListener("scroll", scrollUp);
 
 /*=============== EMAIL JS ===============*/
 const contactForm = document.getElementById("contact-form"),
