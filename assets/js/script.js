@@ -57,7 +57,7 @@ const sr = ScrollReveal({
 sr.reveal(`.contact-headline, .projects-headline`, {
   delay: 600,
 });
-sr.reveal(`.nav, .footer-home, .footer-social, .skills-item, .projects-item`, {
+sr.reveal(`.nav, .footer-home, .footer-social, .skills-item, .projects-card`, {
   origin: "top",
   interval: 100,
 });
@@ -65,7 +65,7 @@ sr.reveal(`.contact-description, .contact-form`, {
   origin: "left",
   interval: 100,
 });
-sr.reveal(`.hero-image`, { origin: "top" });
+sr.reveal(`.hero-banner`, { origin: "top" });
 sr.reveal(`.hero-text`);
 
 /*=============== CUSTOM CURSOR ===============*/
