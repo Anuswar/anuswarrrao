@@ -1,4 +1,4 @@
-# Simple Portfolio 🚀
+# 🚀 Portfolio website
 
 Welcome to the GitHub repository for a Simple portfolio website! This repository contains the source code for the website showcasing Anuswar's projects and information. Feel free to explore, learn, and contribute.
 
